@@ -1,4 +1,4 @@
-angular.module('mytravels')
+angular.module('mytrips')
 	.controller('ViagemController', function($scope, recursoViagem, $routeParams, cadastroDeViagens) {
 
 	$scope.viagem = {};

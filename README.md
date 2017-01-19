@@ -1,3 +1,3 @@
-# my-travels
+# my-trips
 
-An app to find travels around your home.
+An app to find trips around you.

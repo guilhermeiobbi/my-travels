@@ -1,4 +1,4 @@
-angular.module('mytravels')
+angular.module('mytrips')
     .controller('ViagensController', function($scope, recursoViagem) {
 	
 	$scope.viagens = [];
