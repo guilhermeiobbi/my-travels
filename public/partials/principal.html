@@ -1,0 +1,41 @@
+<div class="jumbotron">
+	<h1 class="text-center">My Travels</h1>
+</div>
+
+<div ng-show="mensagem.length" class="alert alert-info" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	{{mensagem}}
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<form>
+			<div class="input-group">
+				<span class="input-group-btn">
+					<a href="/viagens/new" class="btn btn-primary" type="button">
+						Nova viagem
+					</a>
+				</span>
+				<input class="form-control" placeholder="Busque por título, descrição, preço..." 
+					ng-model="filtro" ng-model-options="{ debounce: 500 }">
+			</div>
+		</form>
+	</div> <!-- fim col-md-12 -->
+</div> <!-- fim row -->
+
+<div class="row" style="margin-top: 10px;">
+	<meu-painel class="col-md-12" ng-repeat="viagem in viagens | filter: filtro" titulo="{{viagem.titulo}}">
+		<div class="col-md-4">
+			<img class="img-responsive center-block" ng-src="{{viagem.foto}}" alt="{{viagem.titulo}}">
+		</div>
+		<div class="col-md-6">
+			<pre>{{viagem.descricao | limitTo:150}}</pre>
+			<a href="#">Ver mais</a>
+		</div>
+		<div class="col-md-2">
+			<h3>R$ {{viagem.preco}}</h3>
+			<a class="btn btn-primary btn-block" href="/viagens/edit/{{viagem.id}}">Editar</a>
+			<button class="btn btn-danger btn-block" ng-click="remover(viagem)">Remover</button>
+		</div>
+	</meu-painel>
+</div>

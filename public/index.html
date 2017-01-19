@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="mytravels">
+	<head>
+		<base href="/">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>MyTravels</title>
+		
+		<!-- JQuery -->
+		<script src="static/js/jquery.min.js"></script>
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+		<script src="static/js/bootstrap.min.js"></script>
+		
+		<!-- Angular -->
+		<script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-animate.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+        <script src="js/lib/angular-resource.min.js"></script>
+		
+		<!-- Application -->
+		<script src="js/main.js"></script>
+        <script src="js/controllers/viagem-controller.js"></script>
+		<script src="js/controllers/viagens-controller.js"></script>
+		<script src="js/directives/minhas-diretivas.js"></script>
+        <script src="js/services/meus-servicos.js"></script>
+	</head>
+	<body>
+		<div class="container">
+
+			<ng-view></ng-view>
+
+		</div> <!-- fim container -->        
+	</body>
+</html>
