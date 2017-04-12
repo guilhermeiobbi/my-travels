@@ -1,6 +1,5 @@
 angular.module('meusServicos', ['ngResource'])
 	.factory('recursoViagem', function($resource) {
-
 		return $resource('http://localhost:8080/api/v1/viagens/:viagemId', null, {
 			'update' : { 
 				method: 'PUT'
@@ -11,7 +10,6 @@ angular.module('meusServicos', ['ngResource'])
 		var service = {};
 		service.cadastrar = function(viagem) {
 			return $q(function(resolve, reject) {
-
 				if(viagem.id) {
 					recursoViagem.update({viagemId: viagem.id}, viagem, function() {
 						resolve({
@@ -24,7 +22,6 @@ angular.module('meusServicos', ['ngResource'])
 							mensagem: 'Não foi possível atualizar a viagem ' + viagem.titulo
 						});
 					});
-
 				} else {
 					recursoViagem.save(viagem, function() {
 						resolve({
