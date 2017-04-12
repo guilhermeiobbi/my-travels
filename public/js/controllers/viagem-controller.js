@@ -5,8 +5,8 @@ angular.module('mytrips')
 	$scope.mensagem = '';
 
 	if($routeParams.viagemId) {
-		recursoViagem.get({viagemId: $routeParams.viagemId}, function(viagem) {
-			$scope.viagem = viagem; 
+		recursoViagem.get({viagemId: $routeParams.viagemId}, function(response) {
+			$scope.viagem = response.data; 
 		}, function(erro) {
 			console.log(erro);
 			$scope.mensagem = 'Não foi possível obter a viagem'

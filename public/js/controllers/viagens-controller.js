@@ -5,15 +5,14 @@ angular.module('mytrips')
 	$scope.filtro = '';
 	$scope.mensagem = '';
 
-	recursoViagem.query(function(viagens) {
-		console.log(viagens);
-		$scope.viagens = viagens;
+	recursoViagem.get(function(response) {
+		console.log(response);
+		$scope.viagens = response.data;
 	}, function(erro) {
 		console.log(erro);
 	});
 
 	$scope.remover = function(viagem) {
-
 		recursoViagem.delete({viagemId: viagem.id}, function() {
 			var indiceDaViagem = $scope.viagens.indexOf(viagem);
 			$scope.viagens.splice(indiceDaViagem, 1);
