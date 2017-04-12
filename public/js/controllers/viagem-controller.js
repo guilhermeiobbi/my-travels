@@ -4,6 +4,9 @@ angular.module('mytrips')
 	$scope.viagem = {};
 	$scope.mensagem = '';
 
+	/**
+	 * Busca viagem selecionada para edicao
+	 */
 	if($routeParams.viagemId) {
 		recursoViagem.get({viagemId: $routeParams.viagemId}, function(response) {
 			$scope.viagem = response.data; 
@@ -13,8 +16,10 @@ angular.module('mytrips')
 		});
 	}
 
+	/**
+	 * Salva imagem criada
+	 */
 	$scope.submeter = function() {
-
 		if ($scope.formulario.$valid) {
 			$scope.formulario.$submitted = false;
 

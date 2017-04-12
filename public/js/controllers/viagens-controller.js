@@ -5,6 +5,9 @@ angular.module('mytrips')
 	$scope.filtro = '';
 	$scope.mensagem = '';
 
+	/**
+	 *  Busca lista de viagens
+	 */
 	recursoViagem.get(function(response) {
 		console.log(response);
 		$scope.viagens = response.data;
@@ -12,6 +15,9 @@ angular.module('mytrips')
 		console.log(erro);
 	});
 
+	/**
+	 * Remove viagem selecionada
+	 */
 	$scope.remover = function(viagem) {
 		recursoViagem.delete({viagemId: viagem.id}, function() {
 			var indiceDaViagem = $scope.viagens.indexOf(viagem);
